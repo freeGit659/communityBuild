@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diễn đàn mini</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <span>Trang chủ</span> | <span>Diễn đàn</span>
+        
+        <!-- Khu vực thông tin người dùng -->
+        <div class="user-info">
+            <img src="https://i.pravatar.cc/50" alt="Avatar" class="avatar">
+            <span id="user-name"></span>
+            <button class="menu-button" onclick="toggleMenu()">☰</button>
+            
+                <!-- Switch Dark Mode -->
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+                <span class="slider round">
+                    <i id="darkModeIcon">☀️</i>
+                </span>
+            </label>
+                
+            
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#">Tài khoản</a>
+                <a href="#">Cài đặt</a>
+                <a href="#" onclick="logout()">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Tạo bài viết</h2>
+        <textarea id="postContent" class="post-input" placeholder="Bạn đang nghĩ gì?"></textarea>
+        <button class="post-button" onclick="addPost()">Đăng</button>
+        
+        <div class="post-list" id="postList"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        if (!localStorage.getItem("username")) {
+            window.location.href = "login.html";
+        } else {
+            document.getElementById("user-name").innerText = localStorage.getItem("username");
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

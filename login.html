@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <img src="https://i.pravatar.cc/100" alt="Avatar" class="login-avatar">
+        <input type="text" id="username" placeholder="Tên đăng nhập" required>
+        <input type="password" id="password" placeholder="Mật khẩu" required>
+        <button class="login-button" onclick="login()">Đăng nhập</button>
+        <p class="login-note">Chưa có tài khoản? <a href="#">Đăng ký</a></p>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>
